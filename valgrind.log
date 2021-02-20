@@ -1,0 +1,21 @@
+==10485== Memcheck, a memory error detector
+==10485== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10485== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==10485== Command: ./bin/53shell
+==10485== Parent PID: 1666
+==10485== 
+==10485== 
+==10485== HEAP SUMMARY:
+==10485==     in use at exit: 130,276 bytes in 191 blocks
+==10485==   total heap usage: 341 allocs, 150 frees, 152,781 bytes allocated
+==10485== 
+==10485== LEAK SUMMARY:
+==10485==    definitely lost: 0 bytes in 0 blocks
+==10485==    indirectly lost: 0 bytes in 0 blocks
+==10485==      possibly lost: 0 bytes in 0 blocks
+==10485==    still reachable: 130,276 bytes in 191 blocks
+==10485==         suppressed: 0 bytes in 0 blocks
+==10485== Rerun with --leak-check=full to see details of leaked memory
+==10485== 
+==10485== For counts of detected and suppressed errors, rerun with: -v
+==10485== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

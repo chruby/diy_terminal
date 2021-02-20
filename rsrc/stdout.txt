@@ -1,0 +1,3 @@
+<53shell>$ cat rsrc/input.txt | grep and | wc -l
+30
+<53shell>$ exit

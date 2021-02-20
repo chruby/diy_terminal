@@ -1,0 +1,70 @@
+==8471== Memcheck, a memory error detector
+==8471== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8471== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==8471== Command: ./bin/53shell
+==8471== Parent PID: 1692
+==8471== 
+==8471== Invalid read of size 4
+==8471==    at 0x10B5B1: main (icssh.c:361)
+==8471==  Address 0x56cb040 is 16 bytes inside a block of size 32 free'd
+==8471==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8471==    by 0x10A2CC: free_job (in /home/ics53/hw3/bin/53shell)
+==8471==    by 0x10B534: main (icssh.c:344)
+==8471==  Block was alloc'd at
+==8471==    at 0x4C31B25: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8471==    by 0x10A177: parse (in /home/ics53/hw3/bin/53shell)
+==8471==    by 0x10A30E: validate_input (in /home/ics53/hw3/bin/53shell)
+==8471==    by 0x10ABC1: main (icssh.c:85)
+==8471== 
+==8471== Invalid read of size 8
+==8471==    at 0x10AF0E: main (icssh.c:177)
+==8471==  Address 0x56c9fc8 is 8 bytes inside a block of size 16 free'd
+==8471==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8471==    by 0x10BC67: removeByIndex (linkedList.c:159)
+==8471==    by 0x10AEE0: main (icssh.c:172)
+==8471==  Block was alloc'd at
+==8471==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8471==    by 0x10B851: insertFront (linkedList.c:30)
+==8471==    by 0x10B8BC: insertRear (linkedList.c:41)
+==8471==    by 0x10A6BA: add_job (helpers.c:14)
+==8471==    by 0x10B571: main (icssh.c:348)
+==8471== 
+==8471== Invalid read of size 8
+==8471==    at 0x10AE87: main (icssh.c:168)
+==8471==  Address 0xffffffffffffffff is not stack'd, malloc'd or (recently) free'd
+==8471== 
+==8471== 
+==8471== Process terminating with default action of signal 11 (SIGSEGV)
+==8471==    at 0x50C3F25: raise (raise.c:46)
+==8471==    by 0x10A615: sigsegv_handler (in /home/ics53/hw3/bin/53shell)
+==8471==    by 0x50C3FCF: ??? (in /lib/x86_64-linux-gnu/libc-2.27.so)
+==8471==    by 0x10AE86: main (icssh.c:168)
+==8471== 
+==8471== HEAP SUMMARY:
+==8471==     in use at exit: 131,268 bytes in 206 blocks
+==8471==   total heap usage: 366 allocs, 160 frees, 153,463 bytes allocated
+==8471== 
+==8471== 7 bytes in 1 blocks are definitely lost in loss record 4 of 54
+==8471==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8471==    by 0x4E73738: xmalloc (in /lib/x86_64-linux-gnu/libreadline.so.7.0)
+==8471==    by 0x4E4FDD5: readline_internal_teardown (in /lib/x86_64-linux-gnu/libreadline.so.7.0)
+==8471==    by 0x4E50F31: readline (in /lib/x86_64-linux-gnu/libreadline.so.7.0)
+==8471==    by 0x10B7D0: main (icssh.c:81)
+==8471== 
+==8471== 423 (96 direct, 327 indirect) bytes in 3 blocks are definitely lost in loss record 30 of 54
+==8471==    at 0x4C31B25: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8471==    by 0x10A177: parse (in /home/ics53/hw3/bin/53shell)
+==8471==    by 0x10A30E: validate_input (in /home/ics53/hw3/bin/53shell)
+==8471==    by 0x10ABC1: main (icssh.c:85)
+==8471== 
+==8471== LEAK SUMMARY:
+==8471==    definitely lost: 103 bytes in 4 blocks
+==8471==    indirectly lost: 327 bytes in 3 blocks
+==8471==      possibly lost: 0 bytes in 0 blocks
+==8471==    still reachable: 130,838 bytes in 199 blocks
+==8471==         suppressed: 0 bytes in 0 blocks
+==8471== Reachable blocks (those to which a pointer was found) are not shown.
+==8471== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==8471== 
+==8471== For counts of detected and suppressed errors, rerun with: -v
+==8471== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
